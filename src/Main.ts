@@ -8,11 +8,11 @@ export async function main(): Promise<void> {
 
     const selectedCustomers: Customer[] = [];
 
-    return await
-        customers.forEach(customer => {
+    return customers
+        .forEach(customer => {
             if (office.distance(customer) <= radius) selectedCustomers.push(customer)
-        }).then(
-            () => writeToFile(
+        }).then(() =>
+            writeToFile(
                 "output.txt",
                 selectedCustomers
                     .sort((customer1, customer2) => customer1.user_id - customer2.user_id)
@@ -21,5 +21,3 @@ export async function main(): Promise<void> {
             )
         );
 }
-
-main();

@@ -16,7 +16,7 @@ export class JSONObjectsReader<T> {
 
     /**
      * Performs the specified action asynchronously for each object in the file.
-     * @param callbackfn - A function that accepts an object as an argument. forEach calls the callbackfn function one time for each object in the file.
+     * @param callbackfn - A function that accepts an object as an argument. forEach calls this callback function one time for each object in the file.
      * @returns A promise that resolves once the entire file has been processed.
      */
     forEach(callbackfn: (object: T) => void): Promise<void> {
