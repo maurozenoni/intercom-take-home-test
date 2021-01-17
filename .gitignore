@@ -16,5 +16,9 @@ dist/**/*
 # Ignore program output
 output.txt
 
+# nyc coverage directories
+coverage
+.nyc_output
+
 # todo list
 Todo
