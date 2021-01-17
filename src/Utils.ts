@@ -1,9 +1,10 @@
 import fs from "fs";
+import util from "util";
 import readline from "readline";
 
 
 /**
- * This class reads objects of generic type `T` from a specified file and applies functions to each object.
+ * This class reads objects of generic type `T` from a specified file and applies functions asynchronously to each object.
  * @typeparam T - Generic type prameter for the objects to be read.
  */
 export class JSONObjectsReader<T> {
@@ -14,13 +15,13 @@ export class JSONObjectsReader<T> {
     constructor(private fileName: string) { }
 
     /**
-     * Performs the specified action for each object in the file and optionally calls a closing function once the entire file is processed.
+     * Performs the specified action asynchronously for each object in the file.
      * @param callbackfn - A function that accepts an object as an argument. forEach calls the callbackfn function one time for each object in the file.
-     * @param onClose - A function to be called after every object in the file has been processed. forEach calls the onClose function only once and without parameters.
+     * @returns A promise that resolves once the entire file has been processed.
      */
-    forEach(callbackfn: (object: T) => void, onClose: Function = () => { }) {
+    forEach(callbackfn: (object: T) => void): Promise<void> {
         const readInterface = readline.createInterface({
-            input: fs.createReadStream(`./resources/${this.fileName}`),
+            input: fs.createReadStream(this.fileName),
             output: process.stdout,
             terminal: false
         });
@@ -30,7 +31,7 @@ export class JSONObjectsReader<T> {
             callbackfn(object);
         });
 
-        readInterface.on('close', () => onClose());
+        return new Promise((resolved) => readInterface.on('close', resolved));
     }
 }
 
@@ -38,9 +39,8 @@ export class JSONObjectsReader<T> {
  * Asynchronously writes data to a file, replacing the file if it already exists.
  * @param fileName - A path to a file.
  * @param fileContent - The data to write.
+ * @returns A promise that resolves once the task is completed.
  */
-export function writeToFile(fileName: string, fileContent: string) {
-    fs.writeFile(fileName, fileContent, (err) => {
-        if (err) throw err;
-    });
+export function writeToFile(fileName: string, fileContent: string): Promise<void> {
+    return util.promisify(fs.writeFile)(fileName, fileContent);
 }
