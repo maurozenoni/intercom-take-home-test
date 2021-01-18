@@ -6,7 +6,7 @@ Given a list of customer records in file [customers.txt]("resources/customers.tx
 
 ## Project Structure
 
-Besides the output of the program ([output.txt]("output.txt")) and this very document ([README.md]("README.md")), all other files in the root directory are configuration files for running either the program or development tools.
+Besides the output of the program ([output.txt]("output.txt")) and this very document ([README.md]("README.md")), all other files in the root directory are configuration files for running either the program itself or other development tools.
 
 - `/resources` contains the input file
 - `/src` contains all source code
@@ -27,12 +27,13 @@ node -v
 
 If not, installing these programs is easy. Depending on your operating system, you may need to choose between a Node installer and a Node version manager before proceeding with installation. I suggest that you follow this [Guide](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm) to set up your environment in an optimal way.
 
-## Build
+## Install \& Build
 
 When you are in the root directory of this project, run:
 
 ```
 npm install
+npm run build
 ```
 
 ## Run
