@@ -2,11 +2,11 @@
 
 ## About this program
 
-Given a list of customer records in file [customers.txt]("resources/customers.txt"), this program outputs to file [output.txt]("output.txt") the names and ids of all customers located within 100km of Intercom's Dublin office.
+Given a list of customer records in file [customers.txt](resources/customers.txt), this program outputs to a new file `output.txt` the names and ids of all customers located within 100km of Intercom's Dublin office.
 
 ## Project Structure
 
-Besides the output of the program ([output.txt]("output.txt")) and this very document ([README.md]("README.md")), all other files in the root directory are configuration files for running either the program itself or other development tools.
+Besides this very document ([README.md](README.md)), all other files in the root directory are configuration files for running either the program itself or other development tools.
 
 - `/resources` contains the input file
 - `/src` contains all source code
