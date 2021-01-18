@@ -5,7 +5,7 @@ import readline from "readline";
 
 /**
  * This class reads objects of generic type `T` from a specified file and applies functions asynchronously to each object.
- * @typeparam T - Generic type prameter for the objects to be read.
+ * @typeparam T - Generic type parameter for the objects to be read.
  */
 export class JSONObjectsReader<T> {
 
@@ -36,7 +36,7 @@ export class JSONObjectsReader<T> {
 }
 
 /**
- * Asynchronously writes data to a file, replacing the file if it already exists.
+ * Asynchronously writes data to a file, replacing the file if that already exists.
  * @param fileName - A path to a file.
  * @param fileContent - The data to write.
  * @returns A promise that resolves once the task is completed.
