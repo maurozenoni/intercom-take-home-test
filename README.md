@@ -8,9 +8,9 @@ Given a list of customer records in file [customers.txt](resources/customers.txt
 
 Besides this very document ([README.md](README.md)), all other files in the root directory are configuration files for running either the program itself or other development tools.
 
-- `/resources` contains the input file
-- `/src` contains all source code
-- `/test` contains all test code
+- [`/resources`](resources) contains the input file
+- [`/src`](src) contains all source code
+- [`/test`](test) contains all test code
 
 ## Prerequisites
 
