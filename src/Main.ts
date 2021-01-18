@@ -12,8 +12,9 @@ export async function main(): Promise<void> {
         if (office.distance(customer) <= radius) matchingCustomers.push(customer);
     });
 
+    matchingCustomers.sort((customer1, customer2) => customer1.user_id - customer2.user_id);
+
     const output: string = matchingCustomers
-        .sort((customer1, customer2) => customer1.user_id - customer2.user_id)
         .map(customer => `${customer.name}: ${customer.user_id}`)
         .join("\n");
 
