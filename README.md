@@ -1,5 +1,7 @@
 # The Intercom Take Home Test
 
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=maurozenoni_intercom-take-home-test&metric=alert_status)](https://sonarcloud.io/dashboard?id=maurozenoni_intercom-take-home-test)
+
 ## About this program
 
 Given a list of customer records in file [customers.txt](resources/customers.txt), this program outputs to a new file `output.txt` the names and ids of all customers located within 100km of Intercom's Dublin office.
